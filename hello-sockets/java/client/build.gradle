@@ -1,0 +1,23 @@
+apply plugin: 'application'
+
+sourceSets {
+   main {
+      java {
+         srcDir 'src'
+      }
+   }
+}
+
+/* Dado que es una aplicación en un jar, debo especificar la clase con la función "main" */
+mainClassName = 'ClientMain'
+
+/* Dado que es una aplicación en un jar, debo especificar la clase con la función "main" */
+jar {
+   manifest {
+      attributes 'Main-Class': "$mainClassName"
+   }
+}
+
+run {
+   main = "$mainClassName"
+}
